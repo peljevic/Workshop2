@@ -46,8 +46,8 @@ public class Environment : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// Read the image width and height
-		width = seedImage.width;
-		length = seedImage.height;
+		width = seedImage.width+1;
+		length = seedImage.height+1;
 		height = timeEnd;
         // Create a new CA grid
         CreateGrid ();
@@ -79,6 +79,7 @@ public class Environment : MonoBehaviour {
 
                 // Increment the current frame count
             currentFrame++;
+                Debug.Log("Current itteration: " + currentFrame);
             }
 
             // Display the printed voxels
@@ -216,6 +217,7 @@ public class Environment : MonoBehaviour {
                 if (currentVoxelState == 1) {
                     int currentVoxelAge = currentVoxelObj.GetComponent<Voxel>().GetAge();
                     savedVoxel.GetComponent<Voxel>().SetAge(currentVoxelAge);
+                    //Debug.Log();
                 }
 			}
 		}
