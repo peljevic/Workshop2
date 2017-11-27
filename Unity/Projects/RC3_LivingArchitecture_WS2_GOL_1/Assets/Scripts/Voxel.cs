@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Voxel : MonoBehaviour {
 
 	// VARIABLES
@@ -127,4 +129,112 @@ public class Voxel : MonoBehaviour {
     {
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
+
+    Mesh MeshVoxel1()
+    {
+        Mesh type1Mesh = new Mesh();
+
+        var positions = new Vector3[4];
+        positions[0] = new Vector3(0.0f, 0.0f, 0.0f);
+        positions[1] = new Vector3(1.0f, 0.0f, 1.0f);
+        positions[2] = new Vector3(1.0f, 1.0f, 0.0f);
+        positions[3] = new Vector3(0.0f, 1.0f, 1.0f);
+
+        int[] indices = new int[]
+        {
+            2,1,0,
+            2,0,3,
+            3,1,2,
+            0,1,3
+
+        };
+
+        type1Mesh.vertices = positions;
+
+        Color[] colorsT = new Color[4];
+        colorsT[0] = new Color(1f, 0f, 0.5f, 1);
+        colorsT[1] = new Color(1f, 1f, 0.5f, 1);
+        colorsT[2] = new Color(0f, 1f, 0.5f, 1);
+        colorsT[3] = new Color(0f, 0f, 0.5f, 1);
+
+        type1Mesh.colors = colorsT;
+        type1Mesh.SetTriangles(indices, 0);
+       
+        return type1Mesh;
+    }
+
+    Mesh MeshVoxel2()
+    {
+        Mesh type2Mesh = new Mesh();
+
+        var positions = new Vector3[6];
+        positions[0] = new Vector3(0.0f, 0.0f, 0.0f);
+        positions[1] = new Vector3(1.0f, 0.0f, 1.0f);
+        positions[2] = new Vector3(0.0f, 1.0f, 0.5f);
+        positions[3] = new Vector3(0.5f, 1.0f, 0.0f);
+        positions[4] = new Vector3(0.5f, 1.0f, 1.0f);
+        positions[5] = new Vector3(1.0f, 1.0f, 0.5f);
+
+        /*
+        int[] indices = new int[]
+        {
+            0,1,5,3
+            0,3,2
+            0,1,4,2
+            1,4,5
+
+        };
+        */
+
+        type2Mesh.vertices = positions;
+
+        Color[] colors = new Color[6];
+        colors[0] = new Color(1f, 0f, 0.5f, 1);
+        colors[1] = new Color(1f, 1f, 0.5f, 1);
+        colors[2] = new Color(0f, 1f, 0.5f, 1);
+        colors[3] = new Color(0f, 0f, 0.5f, 1);
+        colors[4] = new Color(0.5f, 1f, 0.5f, 1);
+        colors[5] = new Color(1f, 0f, 0.5f, 0);
+
+        type2Mesh.colors = colors;
+        //type2Mesh.SetTriangles(indices, 0);
+
+        return type2Mesh;
+    }
+
+    Mesh MeshVoxel3()
+    {
+        Mesh type3Mesh = new Mesh();
+
+        var positions = new Vector3[4];
+        positions[0] = new Vector3(0.0f, 0.0f, 0.0f);
+        positions[1] = new Vector3(1.0f, 0.0f, 1.0f);
+        positions[2] = new Vector3(1.0f, 1.0f, 0.0f);
+        positions[3] = new Vector3(0.0f, 1.0f, 1.0f);
+
+        int[] indices = new int[]
+        {
+            2,1,0,
+            2,0,3,
+            3,1,2,
+            0,1,3
+        };
+
+        type3Mesh.vertices = positions;
+
+        Color[] colors = new Color[4];
+        colors[0] = new Color(1f, 0f, 0.5f, 1);
+        colors[1] = new Color(1f, 1f, 0.5f, 1);
+        colors[2] = new Color(0f, 1f, 0.5f, 1);
+        colors[3] = new Color(0f, 0f, 0.5f, 1);
+
+        type3Mesh.colors = colors;
+        type3Mesh.SetTriangles(indices, 0);
+
+        return type3Mesh;
+    }
+
+
+
+
 }

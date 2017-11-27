@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: 7c73f28bd78c7b24c97cde86f0aa2fc9
-timeCreated: 1509393965
+timeCreated: 1511707363
 licenseType: Free
 MonoImporter:
-  externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - seedImage: {instanceID: 0}
+  - voxelPrefab: {fileID: 1616800205886906, guid: 89dc1ddd83b58e6449a7261a55346020,
+      type: 2}
+  - tracedLines: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

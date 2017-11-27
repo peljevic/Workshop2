@@ -27,11 +27,14 @@ public class Environment : MonoBehaviour {
 	// Spacing between voxels
 	float spacing = 1.0f;
 
+    //DOES THIS GET USED AT ANY POINT?
 	// Voxel trace line points - variables for drawing lines through the grid
 	List<Vector3> linePoints;
 	public GameObject tracedLines;
 	public Color tracedLinesColorStart = Color.red;
 	public Color tracedLinesColorEnd = Color.blue;
+
+
 
     //boolean switches
     //toggles pausing the game
